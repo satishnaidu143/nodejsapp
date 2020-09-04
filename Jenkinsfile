@@ -20,9 +20,9 @@ pipeline{
                           docker push snaidu/nodejs:latest '''
             }
         }
-        stage('Continous Deployment'){
+        stage('Continous Delivery'){
             steps{
-                sh 'helm upgrade --install nodejs ./app'
+                sh label: '', script: 'helm upgrade --install nodejs ./app'
             }
         }
 		
