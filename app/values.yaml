@@ -1,5 +1,5 @@
 app:
-  name: app
+  name: nodejsapp
   group: app
   replicaCount: 1
   container:
