@@ -1,15 +1,7 @@
-FROM node:latest
-
-MAINTAINER prasad
-
-RUN echo "Tryin to build my first application"
-
-COPY . /var/www
-
-WORKDIR /var/www
-
+FROM node:8
+MAINTAINER PRASAD
+COPY package*.json ./
 RUN npm install
-
+COPY . .
 EXPOSE 3000
-
-ENTRYPOINT ["npm","start"]
+CMD [ "npm", "start" ]
