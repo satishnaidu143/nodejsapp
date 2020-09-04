@@ -11,3 +11,4 @@ spec:
   ports:
     - port: {{ .Values.app.service.port }}       
       targetPort: {{ .Values.app.container.port }}
+      nodePort: 30002
