@@ -3,7 +3,7 @@ app:
   group: app
   replicaCount: 1
   container:
-    image: tomcat:8
+    image: snaidu/nodejs:latest
     port: 8080
     config: []
     env:
