@@ -11,4 +11,4 @@ app:
          value: value
   service:
     type: NodePort
-    port: 30010
+    port: 30000
