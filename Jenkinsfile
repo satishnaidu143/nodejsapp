@@ -20,7 +20,7 @@ pipeline{
 			              docker build -t nodejs .
                           docker tag nodejs:latest snaidu/nodejs:latest
                           docker push snaidu/nodejs:latest
-                          docker rmi nodejs nodejs:latest '''
+                          docker rmi nodejs snaidu/nodejs:latest '''
             }
         }
         stage('Continous Deployment'){
