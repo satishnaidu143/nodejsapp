@@ -9,8 +9,9 @@ pipeline{
         }
         stage('Continous Build'){
             steps{
-                sh 'npm install
-                    npm test '
+                 sh label: '', script: '''
+			              npm install
+                          npm test    '''
             }
         }
         stage('Updating Docker image'){
