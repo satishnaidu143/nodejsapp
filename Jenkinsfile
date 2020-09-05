@@ -25,7 +25,10 @@ pipeline{
         }
         stage('Continous Deployment'){
             steps{
-                sh label: '', script: 'helm upgrade --install nodejs ./app'
+                sh label: '', script: '
+                cd
+                echo $PATH
+                helm upgrade --install nodejs ./app'
             }
         }
 		
