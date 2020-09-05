@@ -9,18 +9,20 @@ pipeline{
         }
         stage('Continous Build'){
             steps{
-                sh 'npm install'
+                sh 'npm install
+                    npm test '
             }
         }
         stage('Updating Docker image'){
             steps{
                 sh label: '', script: '''
-			  docker build -t nodejs .
+			              docker build -t nodejs .
                           docker tag nodejs:latest snaidu/nodejs:latest
-                          docker push snaidu/nodejs:latest '''
+                          docker push snaidu/nodejs:latest
+                          docker rmi nodejs nodejs:latest '''
             }
         }
-        stage('Continous Delivery'){
+        stage('Continous Deployment'){
             steps{
                 sh label: '', script: 'helm upgrade --install nodejs ./app'
             }
